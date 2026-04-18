@@ -1,0 +1,131 @@
+<%- include('../layouts/main', { body: `
+<div class="page-header">
+    <h1>👋 Goodbye Image Generator</h1>
+    <p>Create meaningful farewell images for members leaving your community</p>
+</div>
+
+<div class="generator-container">
+    <div class="generator-tabs">
+        <button class="tab-btn active" data-tab="url">🌐 URL Method</button>
+        <button class="tab-btn" data-tab="upload">📁 File Upload</button>
+    </div>
+
+    <!-- URL Method Form -->
+    <div class="tab-content active" id="url-tab">
+        <form id="goodbyeUrlForm" class="generator-form" method="GET" action="/api/goodbye/v1" target="_blank">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="username">Username *</label>
+                    <input type="text" id="username" name="username" maxlength="25" required placeholder="JohnDoe">
+                    <small>Max 25 characters</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="groupName">Group Name *</label>
+                    <input type="text" id="groupName" name="groupName" maxlength="30" required placeholder="Anime Club">
+                    <small>Max 30 characters</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="memberCount">Member Count *</label>
+                <input type="number" id="memberCount" name="memberCount" min="0" required placeholder="150">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="groupIconUrl">Group Icon URL *</label>
+                    <input type="url" id="groupIconUrl" name="groupIcon" required placeholder="https://example.com/icon.jpg">
+                    <small>Supported: JPG, JPEG, PNG, GIF, WEBP</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="avatarUrl">Avatar URL *</label>
+                    <input type="url" id="avatarUrl" name="avatar" required placeholder="https://example.com/avatar.jpg">
+                    <small>Supported: JPG, JPEG, PNG, GIF, WEBP</small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="backgroundUrl">Background URL *</label>
+                    <input type="url" id="backgroundUrl" name="background" required placeholder="https://example.com/background.jpg">
+                    <small>Supported: JPG, JPEG, PNG, GIF, WEBP</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="quality">Quality (1-100)</label>
+                    <input type="number" id="quality" name="quality" min="1" max="100" value="100">
+                    <small>Default: 100</small>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large">Generate Goodbye Image →</button>
+        </form>
+    </div>
+
+    <!-- Upload Method Form -->
+    <div class="tab-content" id="upload-tab">
+        <form id="goodbyeUploadForm" class="generator-form" method="POST" action="/api/goodbye/v1" enctype="multipart/form-data" target="_blank">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="upload_username">Username *</label>
+                    <input type="text" id="upload_username" name="username" maxlength="25" required placeholder="JohnDoe">
+                    <small>Max 25 characters</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="upload_groupName">Group Name *</label>
+                    <input type="text" id="upload_groupName" name="groupName" maxlength="30" required placeholder="Anime Club">
+                    <small>Max 30 characters</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="upload_memberCount">Member Count *</label>
+                <input type="number" id="upload_memberCount" name="memberCount" min="0" required placeholder="150">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="groupIconFile">Group Icon File *</label>
+                    <input type="file" id="groupIconFile" name="groupIcon" accept="image/jpeg,image/png,image/gif,image/webp" required>
+                    <small>JPG, JPEG, PNG, GIF, WEBP</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="avatarFile">Avatar File *</label>
+                    <input type="file" id="avatarFile" name="avatar" accept="image/jpeg,image/png,image/gif,image/webp" required>
+                    <small>JPG, JPEG, PNG, GIF, WEBP</small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="backgroundFile">Background File *</label>
+                    <input type="file" id="backgroundFile" name="background" accept="image/jpeg,image/png,image/gif,image/webp" required>
+                    <small>JPG, JPEG, PNG, GIF, WEBP</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="upload_quality">Quality (1-100)</label>
+                    <input type="number" id="upload_quality" name="quality" min="1" max="100" value="100">
+                    <small>Default: 100</small>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large">Upload & Generate →</button>
+        </form>
+    </div>
+</div>
+
+<div class="info-section">
+    <h3>💡 Tips</h3>
+    <ul>
+        <li>Use high-quality images for best results</li>
+        <li>Recommended image size: 1024x450 pixels</li>
+        <li>Square images work best for avatars and icons</li>
+        <li>Adjust quality to balance file size and appearance</li>
+    </ul>
+</div>
+` }) %>

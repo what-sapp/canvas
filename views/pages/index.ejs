@@ -1,0 +1,100 @@
+<%- include('../layouts/main', { body: `
+<div class="hero">
+    <div class="hero-badge">✨ AI-Powered Canvas Generator ✨</div>
+    <h1 class="hero-title">Welcome to Phantom Cava</h1>
+    <p class="hero-subtitle">Create stunning welcome and goodbye images for your Discord community with our advanced canvas API</p>
+    <div class="hero-buttons">
+        <a href="/welcome" class="btn btn-primary">
+            <span>🎉</span> Generate Welcome Image
+        </a>
+        <a href="/goodbye" class="btn btn-secondary">
+            <span>👋</span> Generate Goodbye Image
+        </a>
+    </div>
+</div>
+
+<div class="stats">
+    <div class="stat-card">
+        <div class="stat-number">5000+</div>
+        <div class="stat-label">Images Generated</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">99.9%</div>
+        <div class="stat-label">Uptime</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Support</div>
+    </div>
+</div>
+
+<div class="features">
+    <h2 class="section-title">Why Choose Phantom Cava?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Stunning Designs</h3>
+            <p>Professionally designed templates with smooth gradients and modern aesthetics</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>Optimized image processing with average response time under 2 seconds</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure & Reliable</h3>
+            <p>Enterprise-grade security with 99.9% uptime SLA</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Easy Integration</h3>
+            <p>Simple REST API with comprehensive documentation</p>
+        </div>
+    </div>
+</div>
+
+<div class="api-docs">
+    <h2 class="section-title">API Endpoints</h2>
+    <div class="endpoint">
+        <div class="endpoint-method">GET</div>
+        <div class="endpoint-details">
+            <h3>/api/welcome/v1</h3>
+            <p>Generate welcome image using URL parameters</p>
+            <div class="endpoint-example">
+                <code>GET /api/welcome/v1?username=John&groupName=Anime%20Club&memberCount=150&groupIcon=URL&avatar=URL&background=URL&quality=80</code>
+            </div>
+        </div>
+    </div>
+    <div class="endpoint">
+        <div class="endpoint-method post">POST</div>
+        <div class="endpoint-details">
+            <h3>/api/welcome/v1</h3>
+            <p>Generate welcome image using file upload</p>
+            <div class="endpoint-example">
+                <code>multipart/form-data with fields: username, groupName, memberCount, groupIcon, avatar, background, quality</code>
+            </div>
+        </div>
+    </div>
+    <div class="endpoint">
+        <div class="endpoint-method">GET</div>
+        <div class="endpoint-details">
+            <h3>/api/goodbye/v1</h3>
+            <p>Generate goodbye image using URL parameters</p>
+            <div class="endpoint-example">
+                <code>GET /api/goodbye/v1?username=John&groupName=Anime%20Club&memberCount=150&groupIcon=URL&avatar=URL&background=URL&quality=80</code>
+            </div>
+        </div>
+    </div>
+    <div class="endpoint">
+        <div class="endpoint-method post">POST</div>
+        <div class="endpoint-details">
+            <h3>/api/goodbye/v1</h3>
+            <p>Generate goodbye image using file upload</p>
+            <div class="endpoint-example">
+                <code>multipart/form-data with fields: username, groupName, memberCount, groupIcon, avatar, background, quality</code>
+            </div>
+        </div>
+    </div>
+</div>
+` }) %>

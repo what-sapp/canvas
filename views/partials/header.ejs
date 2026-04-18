@@ -1,0 +1,20 @@
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="/">Phantom Cava</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link <%= activePage === 'home' ? 'active' : '' %>">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/welcome" class="nav-link <%= activePage === 'welcome' ? 'active' : '' %>">🎉 Welcome</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/goodbye" class="nav-link <%= activePage === 'goodbye' ? 'active' : '' %>">👋 Goodbye</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
